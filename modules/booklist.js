@@ -2,8 +2,7 @@ class BookList {
   constructor(title, author) {
     this.title = title;
     this.author = author;
-    this.arrayOfBooks =
-      JSON.parse(localStorage.getItem('this.arrayOfBooks')) || [];
+    this.arrayOfBooks = JSON.parse(localStorage.getItem('this.arrayOfBooks')) || [];
     this.titleInput = document.querySelector('#title');
     this.authorInput = document.querySelector('#author');
     this.formBtn = document.querySelector('.formBtn');
@@ -42,11 +41,11 @@ class BookList {
     const parentArticle = e.currentTarget.parentElement;
     this.bookListContainer.removeChild(parentArticle);
     this.arrayOfBooks = this.arrayOfBooks.filter(
-      (item) => item.id !== parentArticle.dataset.id
+      (item) => item.id !== parentArticle.dataset.id,
     );
     localStorage.setItem(
       'this.arrayOfBooks',
-      JSON.stringify(this.arrayOfBooks)
+      JSON.stringify(this.arrayOfBooks),
     );
   }
 
@@ -89,7 +88,7 @@ class BookList {
       this.displayBooks();
       localStorage.setItem(
         'this.arrayOfBooks',
-        JSON.stringify(this.arrayOfBooks)
+        JSON.stringify(this.arrayOfBooks),
       );
       this.titleInput.value = '';
       this.authorInput.value = '';

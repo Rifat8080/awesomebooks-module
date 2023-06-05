@@ -5,7 +5,7 @@ const removeBook = (e) => {
   const parentArticle = e.currentTarget.parentElement;
   myBook.bookListContainer.removeChild(parentArticle);
   myBook.arrayOfBooks = myBook.arrayOfBooks.filter(
-    (item) => item.id !== parentArticle.dataset.id
+    (item) => item.id !== parentArticle.dataset.id,
   );
   localStorage.setItem('arrayOfBooks', JSON.stringify(myBook.arrayOfBooks));
   // displayBooks();

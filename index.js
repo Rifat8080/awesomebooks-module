@@ -9,7 +9,7 @@ class App {
     this.myBooklist = new Booklist();
     this.myBooklist.formBtn.addEventListener(
       'click',
-      this.myAddItem.bind(this)
+      this.myAddItem.bind(this),
     );
   }
 
